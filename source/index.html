@@ -10,23 +10,47 @@
 </head>
 <body>
   <div class="wrapper">
-    <div class="header-logo">
-
-    </div>
+    <div class="header-logo"></div>
     <div class="form-wrapper">
       <h2 class="form-wrapper__title">Карта отправителя</h2>
-      <p>Можно отправить с карт:</p><div></div>
+      <p class="form-wrapper__desc">Можно отправить с карт:</p>
+      <div class="form-wrapper__cards cards-icon">
+        <span class="cards-icon__mir"></span>
+        <span class="cards-icon__visa"></span>
+        <span class="cards-icon__mc"></span>
+      </div>
       <form action="">
-        <div class="block-number">
-          <input type="text" placeholder="" name="number-card"><label></label>
-          <input type="text" placeholder="" name="number-card"><label></label>
-          <input type="text" placeholder="" name="number-card"><label></label>
-          <input type="text" placeholder="" name="number-card"><label></label>
-          <input type="text" placeholder="" name="number-card"><label></label>
-          <button>Перевести</button>
+        <div class="field-number field-number--error">
+          <input type="text" placeholder="" id="number-card" name="number-card"><label for="number-card">Номер карты</label>
+          <span class="field-number__error">Введён не верный номер карты</span>
         </div>
+        <div class="field-date">
+          <input type="text" placeholder="" id="date" name="date"><label for="date">Срок действия</label>
+        </div>
+        <div class="field-cvv">
+          <input type="password"  placeholder="" id="cvc" name="cvc"><label for="cvc">CVC</label>
+        </div>
+        <div class="field-card-holder">
+          <input type="text" placeholder="" id="name" name="name"><label for="name">Имя владельца карты</label>
+        </div>
+        <div class="field-card-holder-surname">
+          <input type="text" placeholder="" id="surname" name="surname"><label for="surname">Фамилия</label>
+        </div>
+          <button class="btn-submit">Перевести</button>
       </form>
+      <div class="popup-form-error">
+        <h3 class="popup-form-error__title">Общая ошибка формы</h3>
+        <p class="popup-form-error__desc">Накладывается поверх формы,<br>
+          не растягивая контейнер самой формы</p>
+      </div>
     </div>
+    <footer class="payment-footer">
+      <div class="payment-footer__icon payment-footer__icon--visa"></div>
+      <div class="payment-footer__icon payment-footer__icon--verif-visa"></div>
+      <div class="payment-footer__icon payment-footer__icon--mc"></div>
+      <div class="payment-footer__icon payment-footer__icon--mc-verif"></div>
+      <div class="payment-footer__icon payment-footer__icon--pci" ></div>
+    </footer>
   </div>
 </body>
 </html>

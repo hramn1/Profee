@@ -1,7 +1,59 @@
 .form-wrapper{
   max-width: 506px;
-  margin: 10% auto;
+  margin: 140px auto 0;
   border-radius: 16px;
   padding: 60px;
   background-color: #fff;
+  position: relative;
+  &__title{
+    color: #273449;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 90%;
+    margin: 0;
+  }
+  &__desc{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #515A68;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+}
+.cards-icon{
+  display: inline-flex;
+  margin-left: 20px;
+  &__mir{
+    background-image: url(../img/icons/mir-icon.svg);
+    width: 44px;
+    height: 12px;
+    margin-right: 10px;
+  }
+  &__visa{
+    background-image: url(../img/icons/visa.svg);
+    width: 40px;
+    height: 12px;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+  }
+  &__mc{
+    background-image: url(../img/icons/mc-icon.svg);
+    width: 26px;
+    height: 16px;
+    background-repeat: no-repeat;
+    align-self: flex-end;
+  }
+}
+.wrapper{
+  padding: 10px;
+}
+.header-logo{
+  position: absolute;
+  background-image: url(../img/icons/finsend-logo.svg);
+  width: 141px;
+  height: 45px;
+  margin-top: 2%;
+  margin-left: 10%;
 }
