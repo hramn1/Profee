@@ -1,0 +1,13 @@
+@use "variables";
+@mixin inputForm {
+  color: variables.$blackCoral;
+  border: 2px solid variables.$gainsboro;
+  border-radius: 8px;
+  height: 56px;
+  padding: 20px 16px 6px;
+}
+@mixin typographyForm($fw: 700, $fz: 18px, $lh: 22px){
+  font-weight: $fw;
+  font-size: $fz;
+  line-height: $lh;
+}

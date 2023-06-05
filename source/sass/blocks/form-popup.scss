@@ -1,9 +1,58 @@
+@use "../variables.scss";
 .popup-form-error{
   position: absolute;
   z-index: 10;
-  border: 1px solid #FF0016;
-  background-color: #fff;
+  border: 1px solid variables.$red;
+  background-color: variables.$white;
   border-radius: 16px;
   width: 100%;
   max-width: 386px;
+  bottom: 120px;
+  &__title{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 16px 0 8px;
+    padding-left: 50px;
+    color: variables.$oxfordBlue;
+    position: relative;
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/icons/remove-circle.svg);
+      left: 17px;
+      top: 0;
+    }
+  }
+  &__desc{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    padding-left: 50px;
+    margin-bottom:  16px;
+  }
+}
+@media(max-width: variables.$mobile-width) {
+  .popup-form-error{
+    right: 24px;
+    left: 24px;
+    width: auto;
+    max-width: none;
+    &__title{
+      padding-left: 40px;
+      &::before {
+        left: 10px;
+        top: 0;
+      }
+    }
+    &__desc{
+      padding-left: 40px;
+      font-size: 14px;
+      line-height: 18px;
+      padding-right: 15px;
+    }
+  }
 }

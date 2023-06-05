@@ -1,24 +1,17 @@
 @use "../variables.scss";
+@use "../mixins.scss";
 .field-number{
   display: flex;
   width: 100%;
   position: relative;
   & input{
+    @include mixins.inputForm();
     width: 100%;
-    color: variables.$blackCoral;
-    border: 2px solid #D8DCE3;
-    border-radius: 8px;
-    height: 56px;
-    padding: 6px 16px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
+    @include mixins.typographyForm();
   }
   & label {
     position: absolute;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    @include mixins.typographyForm($fw:500, $fz:14px, $lh:18px);
     color: variables.$blackCoral;
     margin: 5px 16px;
   }
@@ -28,11 +21,9 @@
     right: 18px;
     z-index: 10;
     padding: 2px 8px;
-    background-color: #ff0016;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #fff;
+    background-color: variables.$red;
+    @include mixins.typographyForm($fw:500, $fz:14px, $lh:18px);
+    color: variables.$white;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
   }
@@ -50,20 +41,12 @@
   margin-top: 8px;
   & input{
     width: 100%;
-    color: variables.$blackCoral;
-    border: 2px solid #D8DCE3;
-    border-radius: 8px;
-    height: 56px;
-    padding: 6px 16px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
+    @include mixins.inputForm();
+    @include mixins.typographyForm();
   }
   & label {
     position: absolute;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    @include mixins.typographyForm($fw:500, $fz:14px, $lh:18px);
     color: variables.$blackCoral;
     margin: 5px 16px;
   }
@@ -74,17 +57,11 @@
   margin-top: 8px;
   & input{
     width: 100%;
-    color: variables.$blackCoral;
-    border: 2px solid #D8DCE3;
-    border-radius: 8px;
-    height: 56px;
-    padding: 6px 16px;
+    @include mixins.inputForm();
   }
   & label {
     position: absolute;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    @include mixins.typographyForm($fw:500, $fz:14px, $lh:18px);
     color: variables.$blackCoral;
     margin: 5px 16px;
   }
@@ -96,20 +73,12 @@
   margin-top: 24px;
   & input {
     width: 100%;
-    color: variables.$blackCoral;
-    border: 2px solid #D8DCE3;
-    border-radius: 8px;
-    height: 56px;
-    padding: 6px 16px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
+    @include mixins.inputForm();
+    @include mixins.typographyForm();
   }
   & label {
     position: absolute;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    @include mixins.typographyForm($fw:500, $fz:14px, $lh:18px);
     color: variables.$blackCoral;
     margin: 5px 16px;
   }
@@ -121,20 +90,12 @@
   margin-top: 8px;
   & input{
     width: 100%;
-    color: variables.$blackCoral;
-    border: 2px solid #D8DCE3;
-    border-radius: 8px;
-    height: 56px;
-    padding: 6px 16px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
+    @include mixins.inputForm();
+    @include mixins.typographyForm();
   }
   & label {
     position: absolute;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
+    @include mixins.typographyForm($fw:500, $fz:14px, $lh:18px);
     color: variables.$blackCoral;
     margin: 5px 16px;
   }
@@ -144,19 +105,23 @@
   font-size: 16px;
   line-height: 24px;
   background-color: variables.$fieryRose;
-  margin-top: 26px;
-  color: white;
+  margin-top: 28px;
+  color: variables.$white;
   width: 100%;
   text-align: center;
   height: 56px;
   border: 0;
   border-radius: 8px;
   cursor: pointer;
+  &[disabled]{
+    background-color: variables.$mistyRose;
+    cursor: inherit;
+  }
 }
 .payment-footer{
   display: flex;
   margin: 50px auto 0;
-  max-width: 375px;
+  width: 375px;
   justify-content: space-between;
   &__icon{
     width: 52px;
@@ -181,5 +146,18 @@
       height: 18px;
       background-image: url(../img/icons/pci-icon.svg);
     }
+  }
+}
+@media(max-width: variables.$mobile-width) {
+  .field-date{
+    margin-right: 4%;
+    width: 48%;
+  }
+  .field-cvv{
+    width: 48%;
+  }
+  .payment-footer{
+    width: 100%;
+    padding: 0 2%;
   }
 }

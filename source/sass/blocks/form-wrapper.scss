@@ -1,12 +1,13 @@
+@use "../variables.scss";
 .form-wrapper{
   max-width: 506px;
   margin: 140px auto 0;
   border-radius: 16px;
   padding: 60px;
-  background-color: #fff;
+  background-color: variables.$white;
   position: relative;
   &__title{
-    color: #273449;
+    color: variables.$oxfordBlue;
     font-weight: 700;
     font-size: 32px;
     line-height: 90%;
@@ -47,7 +48,8 @@
   }
 }
 .wrapper{
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
 }
 .header-logo{
   position: absolute;
@@ -56,4 +58,24 @@
   height: 45px;
   margin-top: 2%;
   margin-left: 10%;
+}
+@media(max-width: variables.$mobile-width){
+  .form-wrapper{
+    padding: 24px;
+    &__title{
+      font-size: 24px;
+      line-height: 120%;
+    }
+    &__desc{
+      margin-bottom: 0
+    }
+  }
+  .cards-icon{
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .header-logo{
+    display: none;
+  }
 }
